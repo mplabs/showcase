@@ -1,0 +1,47 @@
+<link rel="import" href="../twitter-bootstrap/twitter-bootstrap.html">
+<link rel="import" href="../twitter-bootstrap/twitter-bootstrap-styles.html">
+
+<dom-module id="navbar-header">
+  <template>
+    <style include="twitter-bootstrap-styles"></style>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <div class="navbar-header">
+      <button type="button" class$="[[_getClassName(toggle)]]" aria-expanded$="[[!toggle]]" on-tap="onTab">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#" hidden$="[[!brand]]">Brand</a>
+    </div>
+  </template>
+  <script>
+    Polymer({
+      is: "navbar-header",
+
+      properties: {
+        brand: {
+          type: String
+        },
+
+        toggle: {
+          type: Boolean,
+          notify: true,
+          value: false
+        }
+      },
+
+      onTap: function() {
+        this.toggle = !this.toggle;
+      },
+
+      _getClassName: function(toggle) {
+        return "navbar-toggle" + (!this.toggle ? " collapsed" : "");
+      }
+    });
+  </script>
+</dom-module>

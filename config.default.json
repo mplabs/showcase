@@ -1,0 +1,15 @@
+{
+  "db": {
+    "url": "mongodb://localhost/showcase"
+  },
+  "server": {
+    "host": "localhost",
+    "port": 3000
+  },
+  "storage": {
+    "images": {
+      "originals": "/storage/originals/images",
+      "cache": "/storage/cache/images"
+    }
+  }
+}

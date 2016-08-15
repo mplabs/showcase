@@ -1,0 +1,63 @@
+@charset 'UTF-8';
+
+@import 'https://fonts.googleapis.com/css?family=Arvo';
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+h1, h2, h3 {
+  font-family: Arvo, "Times New Roman", serif;
+}
+
+.header-container {
+  position: relative;
+  height: 100vh;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  background-size: cover;
+  background-image: url("/storage/images/Feix Dürrwald - 0030,large.jpg");
+  background-position: center center;
+}
+
+.header-details {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  color: #fff;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.125);
+}
+
+.header-name {
+  font-size: 6em;
+}
+
+.page-container {
+  margin: 0 auto;
+}
+
+#gallery-container {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+@media 
+(-webkit-min-device-pixel-ratio: 2), 
+(min-resolution: 192dpi) {
+  .header-container {
+    background-image: url("/storage/images/Feix Dürrwald - 0030,large.x2.jpg");
+  }
+}

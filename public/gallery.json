@@ -1,0 +1,17 @@
+{
+  "name": "Anni",
+  "coverImage": "/storage/images/Felix Dürrwald - 0030,large.x2.jpg",
+  "collections": [{
+    "name": "Highlights",
+    "imageRefs": [
+      "b18qdaq6ph70w1nn4s4i",
+      "cf19or6x4wcm9yffxbt9",
+      "9vewvy6bdq2a33zkhuxr"
+    ]
+  }],
+  "images": [
+    { "id": " ", "fileName": "Felix Dürrwald - 0001.jpg", "width": 8000, "height": 6000 },
+    { "id": "cf19or6x4wcm9yffxbt9", "fileName": "Felix Dürrwald - 0002.jpg", "width": 8000, "height": 6000 },
+    { "id": "9vewvy6bdq2a33zkhuxr", "fileName": "Felix Dürrwald - 0003.jpg", "width": 8000, "height": 6000 }
+  ]
+}

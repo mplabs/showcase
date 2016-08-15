@@ -1,0 +1,99 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/iron-image/iron-image.html">
+
+
+<dom-module id="cover-image">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+
+      #container {
+        background-size: cover;
+        background-position: center center;
+        opacity: 0;
+
+        @apply(--layout-fit);
+      }
+
+      #container.faded-in {
+        transition: opacity 0.5 linear;
+        opacity: 1;
+      }
+
+      #details {
+        @apply(--layout-fit);
+        @apply(--layout-vertical);
+        @apply(--layout-center-center);
+      }
+
+      #name {
+        font-size: 6em;
+        color: #fff;
+
+        @apply(--cover-image-name);
+      }
+
+      #subtitle {
+        @apply(--cover-image-subtitle);
+      }
+    </style>
+
+    <div id="container">
+      <div id="details">
+        <div id="name">[[name]]</div>
+        <div id="subtitle" hidden$="[[subtitle]]">[[subtitle]]</div>
+      </div>
+    </div>
+
+  </template>
+  <script>
+  Polymer({
+    is: 'cover-image',
+
+    properties: {
+      image: {
+        type: String,
+        value: '',
+        observer: '_imageChanged'
+      },
+
+      title: {
+        type: String,
+        value: '',
+        observer: '_titleChanged'
+      },
+
+      subtitle: {
+        type: String,
+        value: '',
+        observer: '_subtitleChanged'
+      }
+    },
+
+    _imageChanged: function(newSrc, oldSrc) {
+      var newResolvedSrc = this._resolveSrc(newSrc);
+      if (newResolvedSrc === this._resolvedSrc) { return; }
+      this._resolvedSrc = newResolvedSrc;
+
+      this._reset();
+      this._load(newSrc);
+    },
+
+    _load: function(src) {
+      this.$.container.style.backgroundImage = src ? 'url("' + src + '")' : '';
+      this.$.container.classList.add('faded-in');
+    },
+
+    _reset: function() {
+      this.$.container.classList.remove('faded-in');
+      this.$.container.style.backgroundImage = '';
+    },
+
+    _resolveSrc: function(testSrc) {
+      return Polymer.ResolveUrl.resolveUrl(testSrc, this.ownerDocument.baseURI);
+    }
+  });
+  </script>
+</dom-module>

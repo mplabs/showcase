@@ -1,0 +1,7 @@
+{
+  "name": "showcase",
+  "short_name": "showcase",
+  "description": "A simple static photo gallery for the web.",
+  "start_url": "/",
+  "display": "standalone"
+}

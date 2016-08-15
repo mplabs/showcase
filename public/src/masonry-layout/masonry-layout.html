@@ -1,0 +1,38 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="masonry-layout">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+
+    <div id="sizer"></div>
+    <content select="img"></content>
+
+  </template>
+  <script src="../../bower_components/masonry/dist/masonry.pkgd.min.js"></script>
+  <script>
+    Polymer({
+      is: 'masonry-layout',
+
+      properties: {
+        columnWidth: {
+          type: Number,
+          value: 200
+        }
+      },
+
+      attached: function() {
+        this.$.sizer.style.width = this.columnWidth + 'px';
+
+        this._msnry = new Masonry(this, {
+          itemSelector: 'img',
+          columnWidth: '#sizer',
+          percentPosition: true
+        });
+      }
+    });
+  </script>
+</dom-module>

@@ -1,0 +1,70 @@
+<link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../cover-image/cover-image.html">
+<link rel="import" href="../nav-bar/nav-bar.html">
+<link rel="import" href="../justified-gallery/justified-gallery.html">
+
+<dom-module id="showcase-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+
+    <header id="header">
+      <cover-image id="cover"
+        image="/storage/images/resized/dd2f88ec1ceec23ca3a36d7f59000f2b%2Clarge"
+        name="Kletterwald"
+      ></cover-image>
+    </header>
+
+    <div id="main">     
+      <justified-gallery>
+        
+      </justified-gallery>
+    </div>
+
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'showcase-app',
+
+      properties: {
+        gallery: {
+          type: Object,
+          observer: '_galleryChanged'
+        },
+
+        loaded: {
+          type: Boolean,
+          readOnly: true,
+          value: false
+        }
+      },
+
+      getNavItems: function(collections) {
+        if (!collections) { return; }
+
+        collections.unshift({ label: 'Home' });
+
+        return collections.forEach(function(collection) {
+          return { label: collection.name };
+        })
+      },
+
+      handleError: function() {
+
+      },
+
+      handleResponse: function() {
+        this.set('gallery', this.$.ajax.lastResponse);
+      },
+
+      _galleryChanged: function(newGallery, oldGallery) {
+        console.log(newGallery, oldGallery);
+      }
+    });
+  </script>
+</dom-module>

@@ -1,0 +1,20 @@
+{
+  "name": "showcase",
+  "description": "A simple static photo gallery for the web.",
+  "main": "index.html",
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.4.0",
+    "iron-elements": "PolymerElements/iron-elements#^1.0.10",
+    "paper-elements": "PolymerElements/paper-elements#^1.0.7",
+    "masonry": "^4.1.0",
+    "bootstrap": "^3.3.6",
+    "justifiedGallery": "justified-gallery#^3.6.1",
+    "lightbox2": "^2.8.2"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
+    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^1.0.0",
+    "web-component-tester": "^4.0.0",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "showcase",
+  "version": "1.0.0",
+  "description": "A simple static photo gallery for the web.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start": "nodemon app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com/mplabs/showcase.git"
+  },
+  "author": "Felix Dürrwald <mplabs@mplabs.de>",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cradle": "^0.7.1",
+    "express": "^4.14.0",
+    "fs-extra": "^0.30.0",
+    "gm": "^1.22.0",
+    "lwip": "0.0.9",
+    "mongodb": "^2.2.5",
+    "morgan": "^1.7.0",
+    "multer": "^1.1.0",
+    "mustache-express": "^1.2.2"
+  }
+}

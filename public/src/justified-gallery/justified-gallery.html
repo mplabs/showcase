@@ -1,0 +1,33 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="justified-gallery-styles.html">
+
+<dom-module id="justified-gallery">
+  <template>
+    <style include="justified-gallery-styles"></style>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+
+    <div id="gallery">
+      <content select="img"></content>
+    </div>
+
+  </template>
+  <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="../../bower_components/justifiedGallery/dist/js/jquery.justifiedGallery.min.js"></script>
+  <script>
+    Polymer({
+      is: 'justified-gallery',
+
+      attached: function() {
+        this._gallery = jQuery("#gallery").justifiedGallery({
+          selector: '> img',
+          lastRow: 'justify',
+          margins: 3
+        });
+      }
+    });
+  </script>
+</dom-module>
